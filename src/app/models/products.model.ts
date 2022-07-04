@@ -10,5 +10,8 @@ export interface Product {
     __v: number;
 }
 
+constructor: void {
+
+}
 
 

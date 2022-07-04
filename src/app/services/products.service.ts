@@ -9,6 +9,7 @@ import { Product } from '../models/products.model';
 })
 export class ProductsService {
 
+  
   baseApiUrl:String= environment.baseApiUrl
   constructor(private http:HttpClient) { }
 
@@ -16,4 +17,12 @@ export class ProductsService {
     return this.http.get<Product[]>(this.baseApiUrl+'/products')
 
   }
+
+  postProduct(formData:FormData):Observable <Product> {
+    
+    return this.http.post<Product>(this.baseApiUrl+"/products", formData)
+    
+  
+}
+
 }
