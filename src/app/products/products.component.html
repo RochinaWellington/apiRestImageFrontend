@@ -1,6 +1,7 @@
 <p *ngIf="name">products works {{name}} !</p>
 <input type="text" [(ngModel)]="name">
 
+<p>{{345 | currency}}</p>
 
 <ul *ngFor="let city of cities">
     <li [ngClass]="{'selected':city=== 'Lima','blue':city !=='Lima'}">{{city}}</li>
