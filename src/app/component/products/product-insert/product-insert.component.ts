@@ -12,7 +12,7 @@ export class ProductInsertComponent implements OnInit {
  
  fileToUpload: File | undefined;
  formData: FormData = new FormData();
- name:string='';
+ name:string='sssss';
  product?:Product;
   constructor(private productsService:ProductsService) { }
 
