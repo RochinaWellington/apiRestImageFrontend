@@ -21,7 +21,7 @@ export class ProductsListComponent implements OnInit {
         
       },
       error: (response) =>{
-        console.log("---------------------------------")
+        console.log(response)
       }
       
     })
