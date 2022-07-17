@@ -11,15 +11,15 @@
         </div>
         <br>
         <!-- in app.component.html -->
-        <ngx-dropzone (change)="onSelect($event)" class="col-md-4" accept="image/jpeg,image/jpg,image/png,image/gif"
+        <ngx-dropzone  (change)="onSelect($event)" class="col-md-4" accept="image/jpeg,image/jpg,image/png,image/gif"
             [expandable]="true">
-            <ngx-dropzone-label>Seleccione una imagen</ngx-dropzone-label>
-            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+            <ngx-dropzone-label><button class="btn btn-outline-primary">Seleccionar imagen</button></ngx-dropzone-label>
+            <ngx-dropzone-image-preview  ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
                 [removable]="true" (removed)="onRemove(f)">
                 <ngx-dropzone-label> </ngx-dropzone-label>
             </ngx-dropzone-image-preview>
         </ngx-dropzone>
         <br>
-        <button type="submit" class="btn btn-primary" (click)="onUpload()"> Upload</button>
+        <button type="submit" class="btn btn-dark" (click)="onUpload()"> Upload</button>
     </form>
 </div>
