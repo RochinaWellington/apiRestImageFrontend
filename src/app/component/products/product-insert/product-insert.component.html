@@ -1,23 +1,25 @@
-
-
-
 <!---->
 
-<div class="mx-auto p-4" style="width: 100%;" >
-<form>
-    
-    <div class="col-md-4">
-        <label for="formGroupExampleInput2" class="form-label">Select Image</label>
-        <input type="file" class="form-control" id="formGroupExampleInput2" (change)="onFileSelected($event)">
-    </div>
-    <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Name of Product.</label>
-        <input [(ngModel)]="name" name="first"  class="form-control">
-        <div class="valid-feedback">
-          Looks good!
+<div class="mx-auto p-4" style="width: 100%;">
+    <form>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Name of Product.</label>
+            <input [(ngModel)]="name" name="first" class="form-control">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
         </div>
-    </div>
-    <br>
-    <button type="submit" class="btn btn-primary" (click)="onUpload()"> Upload</button>
-</form>
+        <br>
+        <!-- in app.component.html -->
+        <ngx-dropzone (change)="onSelect($event)" class="col-md-4" accept="image/jpeg,image/jpg,image/png,image/gif"
+            [expandable]="true">
+            <ngx-dropzone-label>Seleccione una imagen</ngx-dropzone-label>
+            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+                [removable]="true" (removed)="onRemove(f)">
+                <ngx-dropzone-label> </ngx-dropzone-label>
+            </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+        <br>
+        <button type="submit" class="btn btn-primary" (click)="onUpload()"> Upload</button>
+    </form>
 </div>

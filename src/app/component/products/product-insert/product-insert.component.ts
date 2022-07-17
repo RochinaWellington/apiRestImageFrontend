@@ -10,8 +10,7 @@ import { Product } from 'src/app/models/products.model';
 
 export class ProductInsertComponent implements OnInit {
 
-  fileToUpload: File[] = [];
-  
+  files: File[] = [];
   name: string = '';
   product?: Product;
   constructor(private productsService: ProductsService) { }
@@ -20,23 +19,34 @@ export class ProductInsertComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFileSelected(event: any) {
-    this.fileToUpload.push(event.target.files[0]);
-    console.log('--------------------------------------')
-    console.log(this.fileToUpload)
-    console.log(this.fileToUpload.length)
+  onSelect(event: any) {
+    console.log(event);
+    console.log(this.files.length)
+    if (this.files.length < 1) {
+      this.files.push(...event.addedFiles);
+    }
+    else {
+      alert('Solo puede cargar 1 imagen')
+    }
 
 
   }
 
+  onRemove(event: any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+
+
   onUpload() {
 
-    if (!this.fileToUpload[0]) {
-      alert('Ingrese una imagen')
+    if (!this.files[0] || this.name==='') {
+      alert('Llene los datos obligatorios')
     }
     else {
-      const file_data=this.fileToUpload[0]
-      const formData = new FormData(); 
+      const file_data = this.files[0]
+      const formData = new FormData();
       formData.append('image', file_data)
       formData.append('name', this.name)
       this.productsService.postProduct(formData)

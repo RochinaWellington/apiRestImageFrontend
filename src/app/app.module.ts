@@ -8,18 +8,23 @@ import { ProductsListComponent } from './component/products/products-list/produc
 import { HttpClientModule } from '@angular/common/http';
 import { ProductInsertComponent } from './component/products/product-insert/product-insert.component';
 
+//Ngx lib dropzone
+import { NgxDropzoneModule } from 'ngx-dropzone';
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductsListComponent,
     ProductInsertComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxDropzoneModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
