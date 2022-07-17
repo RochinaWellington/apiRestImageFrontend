@@ -9,48 +9,54 @@ import { Product } from 'src/app/models/products.model';
 })
 
 export class ProductInsertComponent implements OnInit {
- 
- fileToUpload: File | undefined;
- formData: FormData = new FormData();
- name:string='sssss';
- product?:Product;
-  constructor(private productsService:ProductsService) { }
 
+  fileToUpload: File[] = [];
   
+  name: string = '';
+  product?: Product;
+  constructor(private productsService: ProductsService) { }
+
+
   ngOnInit(): void {
   }
 
-  onFileSelected(event:any){
-   this.fileToUpload =<File>event.target.files[0]
-  // console.log(this.fileToUpload)
-   this.formData.append('image', this.fileToUpload, this.fileToUpload.name);
-   
-   
+  onFileSelected(event: any) {
+    this.fileToUpload.push(event.target.files[0]);
+    console.log('--------------------------------------')
+    console.log(this.fileToUpload)
+    console.log(this.fileToUpload.length)
+
 
   }
-  
-  onUpload(){
-    //const formData: FormData = new FormData();
-    
-    this.formData.append('name',this.name)
-    
-    this.productsService.postProduct(this.formData)
-    .subscribe({
-      next: (products) => {
-        this.product=products;
-        console.log(products)
-        
-      },
-      error: (response) =>{
-        console.log(response)
-      }
-      
-    })
-    
+
+  onUpload() {
+
+    if (!this.fileToUpload[0]) {
+      alert('Ingrese una imagen')
+    }
+    else {
+      const file_data=this.fileToUpload[0]
+      const formData = new FormData(); 
+      formData.append('image', file_data)
+      formData.append('name', this.name)
+      this.productsService.postProduct(formData)
+        .subscribe({
+          next: (products) => {
+            this.product = products;
+            console.log(products)
+
+          },
+          error: (response) => {
+            console.log(response)
+          }
+
+        })
+    }
+
   }
 
 
 
 
-  
+
 }
