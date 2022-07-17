@@ -1,42 +1,14 @@
-<!--
-<div class="container my-5">
-    <h1 class="mb-3">products</h1>
-    <table class="table" *ngIf="products && products.length">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Date Create</th>
-                <th>Ruta Imagen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products">
 
-                <td> {{ product._id}}</td>
-                <td> {{ product.name}}</td>
-                <td> {{product.price}}</td>
-                <td> {{product.createdAt}}</td>
-                <td> {{product.image.public_id}}</td>
-            </tr>
-        </tbody>
-    </table>
-     
-    <p *ngIf="!products || products.length <= 0">No Product Found</p>
-</div>
-
-
--->
 
 <div class="row" >
     <div class="col-sm-2" *ngFor="let product of products">
-      <div class="card mt-4">
+      <div class="card mt-5">
         <img src="{{product.image.secure_url}}" class="card-img-top product" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-dark">Go somewhere</a>
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">El costo del auro es: {{product.price}} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <a href="#" class="btn btn-dark" (click)="showModalMasInformacion()">Go somewhere</a>
         </div>
       </div>
     </div>
