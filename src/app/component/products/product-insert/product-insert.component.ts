@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/products.model';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-product-insert',
   templateUrl: './product-insert.component.html',
@@ -26,7 +26,7 @@ export class ProductInsertComponent implements OnInit {
       this.files.push(...event.addedFiles);
     }
     else {
-      alert('Solo puede cargar 1 imagen')
+      this.showModal()
     }
 
 
@@ -42,7 +42,7 @@ export class ProductInsertComponent implements OnInit {
   onUpload() {
 
     if (!this.files[0] || this.name==='') {
-      alert('Llene los datos obligatorios')
+      this.showModal()
     }
     else {
       const file_data = this.files[0]
@@ -65,7 +65,13 @@ export class ProductInsertComponent implements OnInit {
 
   }
 
-
+  showModal(){
+    Swal.fire(
+      'Ups!',
+      'Solo puede ingresar una imagen',
+      'error'
+    )
+  }
 
 
 

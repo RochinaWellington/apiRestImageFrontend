@@ -1,8 +1,11 @@
 <!---->
 
-<div class="mx-auto p-4" style="width: 100%;">
+<div class="container position-relative">
+    <div>
+        <h1> Ingrese el carro a vender</h1>
+    </div>
     <form>
-        <div class="col-md-4">
+        <div >
             <label for="validationCustom01" class="form-label">Name of Product.</label>
             <input [(ngModel)]="name" name="first" class="form-control">
             <div class="valid-feedback">
@@ -11,7 +14,7 @@
         </div>
         <br>
         <!-- in app.component.html -->
-        <ngx-dropzone (change)="onSelect($event)" class="col-md-4" accept="image/jpeg,image/jpg,image/png,image/gif"
+        <ngx-dropzone (change)="onSelect($event)"  accept="image/jpeg,image/jpg,image/png,image/gif"
             [expandable]="true">
             <ngx-dropzone-label>Seleccione una imagen</ngx-dropzone-label>
             <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
@@ -20,6 +23,9 @@
             </ngx-dropzone-image-preview>
         </ngx-dropzone>
         <br>
-        <button type="submit" class="btn btn-primary" (click)="onUpload()"> Upload</button>
+        
+            <button type="submit" class="btn btn-primary" (click)="onUpload()"> Guardar</button>
+        
+      
     </form>
 </div>
