@@ -1,31 +1,33 @@
 <!---->
-
-<div class="container position-relative">
-    <div>
-        <h1> Ingrese el carro a vender</h1>
+<body>
+    <div class="cabecera">
+        <h1> PUBLICA TU PRODUCTO</h1>
     </div>
-    <form>
-        <div >
-            <label for="validationCustom01" class="form-label">Name of Product.</label>
-            <input [(ngModel)]="name" name="first" class="form-control">
-            <div class="valid-feedback">
-                Looks good!
+    <div class="container position-relative contenedorFormulario">
+        
+        <form>
+            <div >
+                <label for="validationCustom01" class="form-label">Nombre del producto</label>
+                <input [(ngModel)]="name" name="first" class="form-control">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
-        </div>
-        <br>
-        <!-- in app.component.html -->
-        <ngx-dropzone (change)="onSelect($event)"  accept="image/jpeg,image/jpg,image/png,image/gif"
-            [expandable]="true">
-            <ngx-dropzone-label>Seleccione una imagen</ngx-dropzone-label>
-            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-                [removable]="true" (removed)="onRemove(f)">
-                <ngx-dropzone-label> </ngx-dropzone-label>
-            </ngx-dropzone-image-preview>
-        </ngx-dropzone>
-        <br>
-        
-            <button type="submit" class="btn btn-primary" (click)="onUpload()"> Guardar</button>
-        
-      
-    </form>
-</div>
+            <br>
+            <!-- in app.component.html -->
+            <ngx-dropzone (change)="onSelect($event)"  accept="image/jpeg,image/jpg,image/png,image/gif"
+                [expandable]="true">
+                <ngx-dropzone-label><button class="btn btn-outline-success">Seleccione una imagen</button></ngx-dropzone-label>
+                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+                    [removable]="true" (removed)="onRemove(f)">
+                    <ngx-dropzone-label> </ngx-dropzone-label>
+                </ngx-dropzone-image-preview>
+            </ngx-dropzone>
+            <br>
+            
+                <button type="submit" class="btn btn-dark" (click)="onUpload()"> Publicar</button>
+            
+          
+        </form>
+    </div>
+</body>

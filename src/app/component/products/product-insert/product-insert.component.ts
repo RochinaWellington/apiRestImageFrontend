@@ -26,7 +26,7 @@ export class ProductInsertComponent implements OnInit {
       this.files.push(...event.addedFiles);
     }
     else {
-      this.showModal()
+      this.showModalImagen()
     }
 
 
@@ -42,7 +42,7 @@ export class ProductInsertComponent implements OnInit {
   onUpload() {
 
     if (!this.files[0] || this.name==='') {
-      this.showModal()
+      this.showModalValidacion()
     }
     else {
       const file_data = this.files[0]
@@ -65,12 +65,25 @@ export class ProductInsertComponent implements OnInit {
 
   }
 
-  showModal(){
-    Swal.fire(
-      'Ups!',
-      'Solo puede ingresar una imagen',
-      'error'
-    )
+  showModalImagen(){
+    Swal.fire({
+      position: 'center',
+      icon: 'info',
+      title: 'Solo puede agregar una imagen',
+      showConfirmButton: false,
+      timer: 1500,
+      background:'white'
+    })
+  }
+  showModalValidacion(){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: 'Algunos campos obligatorios están vacíos',
+      showConfirmButton: false,
+      timer: 1500,
+      background:'white'
+    })
   }
 
 
