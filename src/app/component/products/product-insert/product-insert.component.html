@@ -1,33 +1,61 @@
-<!---->
-<body>
-    <div class="cabecera">
-        <h1> PUBLICA TU PRODUCTO</h1>
+<div class="d-flex flex-row">
+  <div class="align-self-stretch w-50 ">
+    <app-barra-lateral></app-barra-lateral>
+  </div>
+
+  <div class="py-3 pe-5">
+    <div class="py-5 text-center">
+      <img
+        class="d-block mx-auto mb-4"
+        src="https://utneduec-my.sharepoint.com/personal/wirochinar_utn_edu_ec/Documents/Archivo%20para%20proyecto%20de%20titulación/coche.png"
+        width="100"
+        height="100"
+      />
+      <h2>PUBLICA TU PRODUCTO</h2>
+      <p class="lead">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ex
+        exercitationem, fugiat dignissimos necessitatibus soluta. Illum cum
+        inventore, doloribus maxime consectetur, minima repudiandae laudantium
+        perferendis odit provident, saepe tempora ea.
+      </p>
     </div>
     <div class="container position-relative contenedorFormulario">
-        
-        <form>
-            <div >
-                <label for="validationCustom01" class="form-label">Nombre del producto</label>
-                <input [(ngModel)]="name" name="first" class="form-control">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <br>
-            <!-- in app.component.html -->
-            <ngx-dropzone (change)="onSelect($event)"  accept="image/jpeg,image/jpg,image/png,image/gif"
-                [expandable]="true">
-                <ngx-dropzone-label><button class="btn btn-outline-success">Seleccione una imagen</button></ngx-dropzone-label>
-                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-                    [removable]="true" (removed)="onRemove(f)">
-                    <ngx-dropzone-label> </ngx-dropzone-label>
-                </ngx-dropzone-image-preview>
-            </ngx-dropzone>
-            <br>
-            
-                <button type="submit" class="btn btn-dark" (click)="onUpload()"> Publicar</button>
-            
-          
-        </form>
+      <form>
+        <div>
+          <label for="validationCustom01" class="form-label"
+            >Nombre del producto</label
+          >
+          <input [(ngModel)]="name" name="first" class="form-control" />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <br />
+        <!-- in app.component.html -->
+        <ngx-dropzone
+          (change)="onSelect($event)"
+          accept="image/jpeg,image/jpg,image/png,image/gif"
+          [expandable]="true"
+        >
+          <ngx-dropzone-label
+            ><button class="btn btn-outline-success">
+              Seleccione una imagen
+            </button>
+          </ngx-dropzone-label>
+          <ngx-dropzone-image-preview
+            ngProjectAs="ngx-dropzone-preview"
+            *ngFor="let f of files"
+            [file]="f"
+            [removable]="true"
+            (removed)="onRemove(f)"
+          >
+            <ngx-dropzone-label> </ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+        <br />
+
+        <button type="submit" class="btn btn-success" (click)="onUpload()">
+          Publicar
+        </button>
+      </form>
     </div>
-</body>
+  </div>
+</div>

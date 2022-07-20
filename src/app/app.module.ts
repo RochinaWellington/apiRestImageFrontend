@@ -10,13 +10,21 @@ import { ProductInsertComponent } from './component/products/product-insert/prod
 
 //Ngx lib dropzone
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { NavabarComponent } from './component/navbar/navabar/navabar.component';
+import { LoginComponent } from './component/Accesos/login/login.component';
+import { MainUsuariosComponent } from './component/Accesos/main-usuarios/main-usuarios.component';
+import { BarraLateralComponent } from './component/navbar/barra-lateral/barra-lateral.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
-    ProductInsertComponent
+    ProductInsertComponent,
+    NavabarComponent,
+    LoginComponent,
+    MainUsuariosComponent,
+    BarraLateralComponent
     
   ],
   imports: [
