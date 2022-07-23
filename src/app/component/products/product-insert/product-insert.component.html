@@ -21,29 +21,6 @@
       </p>
     </div>
     <div class="container position-relative contenedorFormulario">
-<<<<<<< HEAD
-        <form>
-            <div >
-                <label for="validationCustom01" class="form-label">Nombre del producto</label>
-                <input [(ngModel)]="name" name="first" class="form-control">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <br>
-            <!-- in app.component.html -->
-            <ngx-dropzone (change)="onSelect($event)"  accept="image/jpeg,image/jpg,image/png,image/gif"
-                [expandable]="true">
-                <ngx-dropzone-label><button class="btn btn-outline-success">Seleccione una imagen</button></ngx-dropzone-label>
-                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-                    [removable]="true" (removed)="onRemove(f)">
-                    <ngx-dropzone-label> </ngx-dropzone-label>
-                </ngx-dropzone-image-preview>
-            </ngx-dropzone>
-            <br>
-                <button type="submit" class="btn btn-dark" (click)="onUpload()"> Publicar</button>
-        </form>
-=======
       <form>
         <div>
           <label for="validationCustom01" class="form-label"
@@ -80,7 +57,6 @@
           Publicar
         </button>
       </form>
->>>>>>> development
     </div>
   </div>
 </div>
