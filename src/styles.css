@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root{
+    --menu:  #535c58;
+    --menu-hover:  #056412;
+}

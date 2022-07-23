@@ -1,0 +1,29 @@
+.body{
+    background: #eee;
+}
+
+#side_nav{
+    background: #000;
+}
+
+.content{
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+}
+hr.h-color{
+    background: #eee;
+}
+
+
+.sidebar li a{
+    color: var(--menu)
+}
+.sidebar li a:hover{
+
+    color: var(--menu-hover)
+}
+
+.borde-color{
+    border: 6px solid green;
+}
