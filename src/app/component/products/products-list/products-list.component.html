@@ -1,7 +1,7 @@
 
-
+<div class="container-sm">
 <div class="row" >
-    <div class="col-sm-2" *ngFor="let product of products">
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 align-items-stretch" *ngFor="let product of products" >
       <div class="card mt-5">
         <img src="{{product.image.secure_url}}" class="card-img-top product" alt="...">
         <div class="card-body">
@@ -12,7 +12,5 @@
         </div>
       </div>
     </div>
-    
-    
   </div>
-  
+</div>
