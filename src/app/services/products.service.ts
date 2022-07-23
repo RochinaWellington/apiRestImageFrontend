@@ -10,7 +10,7 @@ import { Product } from '../models/products.model';
 export class ProductsService {
 
   
-  baseApiUrl:String= environment.baseApiUrl
+  baseApiUrl:String='https://rochina-api-imagen.herokuapp.com'
   constructor(private http:HttpClient) { }
 
   getAllProduct(): Observable<Product[]>{
